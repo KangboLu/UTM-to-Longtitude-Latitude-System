@@ -3,7 +3,7 @@
 #       Python Version      #
 #----------------------------
 # Adapted from Node-coordinator Project (https://github.com/beatgammit/node-coordinator)
-# 
+# Modified by Kangbo Lu
 # Original and this version released under MIT License (Provided below as per licensing)
 #
 # Copyright (c) 2011 Larry Moore, larmoor@gmail.com
@@ -32,8 +32,6 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
-
-# Import math module
 import math
 
 def utmToLatLong(utmNorthing, utmEasting, utmZone):
@@ -53,7 +51,7 @@ def utmToLatLong(utmNorthing, utmEasting, utmZone):
     zoneNumber = int(utmZone)
 
     # This line below is for debug purposes only, remove for batch processes.
-    print 'The input is: ' + str(utmEasting) + 'm E, ' + str(utmNorthing) + 'm N in NAD83 UTM Zone ' + str(utmZone) + '\n'
+    print('The input is: ', str(utmEasting), 'm E, ', str(utmNorthing), 'm N in NAD83 UTM Zone ', str(utmZone), '\n')
 
     # Finds the origin longitude for the zone
     lonOrigin = (zoneNumber - 1) * 6 - 180 + 3 # +3 puts in zone centre
@@ -81,14 +79,6 @@ def utmToLatLong(utmNorthing, utmEasting, utmZone):
     lon = lonOrigin + lon * rad2deg
 
     # Print function below is for debug purposes
-#NOTE: THIS IS THE LOCATION WHERE THE NUMBERS ARE ROUNDED TO 5 DECIMAL PLACES
-    print "Lat: " + str(round(lat, 5)) + ", Long: " + str(round(lon,5))
+    print("Longtitude: ", str(lon), ", Latitude: ", str(lat))
     
-    return lat
-    return lon
-
-#For manual input
-northing = input("Northing: ")
-easting = input("Easting: ")
-zone = input("UTM Zone: ")
-utmToLatLong(northing, easting, zone)
+    return lon, lat
