@@ -50,9 +50,6 @@ def utmToLatLong(utmNorthing, utmEasting, utmZone):
     yUTM = float(utmNorthing)
     zoneNumber = int(utmZone)
 
-    # This line below is for debug purposes only, remove for batch processes.
-    print('The input is: ', str(utmEasting), 'm E, ', str(utmNorthing), 'm N in NAD83 UTM Zone ', str(utmZone), '\n')
-
     # Finds the origin longitude for the zone
     lonOrigin = (zoneNumber - 1) * 6 - 180 + 3 # +3 puts in zone centre
 
@@ -77,8 +74,5 @@ def utmToLatLong(utmNorthing, utmEasting, utmZone):
     # Calculate longitude, in decimal degrees
     lon = (D - (1 + 2 * T1 + C1) * D * D * D / 6 + (5 - 2 * C1 + 28 * T1 - 3 * C1 * C1 + 8 * eccPrimeSquared + 24 * T1 * T1) * D * D * D * D * D / 120) / math.cos(phi1Rad)
     lon = lonOrigin + lon * rad2deg
-
-    # Print function below is for debug purposes
-    print("Longtitude: ", str(lon), ", Latitude: ", str(lat))
     
     return lon, lat
