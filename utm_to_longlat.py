@@ -34,7 +34,10 @@
 
 import math
 
-def utmToLatLong(utmNorthing, utmEasting, utmZone):
+# utemEasting is X
+# utmNorthing is Y
+# utmZone is your UTM zone
+def utmToLatLong(utmEasting, utmNorthing, utmZone):
     eastingOffset = 500000.0
     northingOffset = 10000000.0
     k0 = 0.9996
