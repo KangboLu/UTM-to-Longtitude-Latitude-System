@@ -1,4 +1,4 @@
-UTM2LatLong
+UTM system to Longtitude Latitude System:
 ===========
 
 A Python script that converts NAD83 UTM Coordinates to Latitude/Longitude (WGS84).  Based on "node-coordinator" by Larry Moore.  I converted his modular JavaScript code to one Python for the sole purpose of converting UTM X,Y to Lat/Long. 
@@ -6,7 +6,7 @@ A Python script that converts NAD83 UTM Coordinates to Latitude/Longitude (WGS84
 How to use it:
 =====
 
-The script is pretty simple - when it is run it asks for Northing, Easting, and the UTM Zone then spits out the latitude/longitude.  Remove the print and input stuff and you can integrate it into some other process.
+The script is pretty simple: The function asks for Easting(X), Northing(Y) and the UTM Zone, and then outputs the longitude and latitude. 
 
 This is based on the "node-coordinator" project by beatgammit (https://github.com/beatgammit/node-coordinator).
 
